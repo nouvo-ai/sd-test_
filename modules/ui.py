@@ -685,6 +685,7 @@ def create_ui():
 
         img2img_prompt_img = gr.File(label="", elem_id="img2img_prompt_image", file_count="single", type="binary", visible=False)
 
+        #화투패 (extra networks) 관련 부분
         with FormRow(variant='compact', elem_id="img2img_extra_networks", visible=False) as extra_networks:
             from modules import ui_extra_networks
             extra_networks_ui_img2img = ui_extra_networks.create_ui(extra_networks, extra_networks_button, 'img2img')

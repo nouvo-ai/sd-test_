@@ -1346,6 +1346,7 @@ def create_ui():
         (modelmerger_interface, "Checkpoint Merger", "modelmerger"),
     ]
 
+    interfaces += script_callbacks.ui_tabs_callback()
 
     extensions_interface = ui_extensions.create_ui()
     interfaces += [(extensions_interface, "Extensions", "extensions")]

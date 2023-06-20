@@ -1099,6 +1099,7 @@ def create_ui():
         }
         return interp_descriptions[value]
 
+    # stable diffusion checkpoint 선택하는 부분
     with gr.Blocks(analytics_enabled=False) as modelmerger_interface:
         with gr.Row().style(equal_height=False):
             with gr.Column(variant='compact'):

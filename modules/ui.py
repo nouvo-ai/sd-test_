@@ -1142,7 +1142,10 @@ def create_ui():
                 with gr.Group(elem_id="modelmerger_results_panel"):
                     modelmerger_result = gr.HTML(elem_id="modelmerger_result", show_label=False)
 
-   
+    with gr.Blocks(analytics_enabled=False) as train_interface:
+        with gr.Row().style(equal_height=False):
+            gr.HTML(value="<p style='margin-bottom: 0.7em'>See <b><a href=\"https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion\">wiki</a></b> for detailed explanation.</p>")
+
         
 
     def create_setting_component(key, is_quicksettings=False):
@@ -1343,8 +1346,6 @@ def create_ui():
         (modelmerger_interface, "Checkpoint Merger", "modelmerger"),
     ]
 
-    interfaces += script_callbacks.ui_tabs_callback()
-    interfaces += [(settings_interface, "Settings", "settings")]
 
     extensions_interface = ui_extensions.create_ui()
     interfaces += [(extensions_interface, "Extensions", "extensions")]
